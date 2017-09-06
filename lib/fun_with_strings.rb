@@ -1,9 +1,12 @@
 module FunWithStrings
   def palindrome?
-    # your code here
+    stripped = self.downcase.gsub(/[^a-z]/, "")
+    return stripped == stripped.reverse
   end
   def count_words
-    # your code here
+    words = self.downcase.gsub(/[^a-z\s]/, "").split(' ')
+    uniq_words = words.uniq
+    return uniq_words.collect { |word| [word, words.count(word)]}.to_h
   end
   def anagram_groups
     # your code here
