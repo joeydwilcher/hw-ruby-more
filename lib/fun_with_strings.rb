@@ -5,11 +5,11 @@ module FunWithStrings
   end
   def count_words
     words = self.downcase.gsub(/[^a-z\s]/, "").split(' ')
-    uniq_words = words.uniq
-    return uniq_words.collect { |word| [word, words.count(word)]}.to_h
+    return words.uniq.collect { |word| [word, words.count(word)]}.to_h
   end
   def anagram_groups
-    # your code here
+    words = self.split(' ')
+    return words.group_by { |word| word.downcase.chars.sort.join }.values
   end
 end
 

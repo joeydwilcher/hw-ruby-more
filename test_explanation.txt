@@ -1,0 +1,72 @@
+Palindrome
+    should work for simple strings
+    - Tests basic functionality for function
+    should be case-insensitive
+    - Tests if the function is case insensitive
+    should ignore nonword characters
+    - Tests if the function ignores nonword characters
+    
+    
+Word Count
+    should return a hash
+    - validates if the function correctly returns a hash
+    works on simple strings
+    - validates basic functionality
+    ignores punctuation
+    - validates if punctuation is ignored
+    works on the empty string
+    - validates if empty string correctly returns an empty hash
+    ignores leading whitespace
+    - validates if leading whitespace is ignored
+    ignores embedded whitespace
+    - validates if whitespace inside the string is ignored
+
+Anagram Grouping
+    should work on the empty string
+    - validates if the function returns an empty array for the emtpy string as specified by the requirements
+    should return an array of arrays for nonempty string
+    - validates if function returns an array of arrays as specified by the requirements
+    scream cars for four scar creams
+    - validates basic functionality
+    should ignore capitalization
+    - validates if the function ignores case
+    
+Dessert
+    cake
+    - tests constructor and basic functionality
+    - tests not healthy
+    apple
+    - tests healthy
+    can set
+    - tests getters and setters
+    
+JellyBean
+    when non-licorice
+    - tests if calories and name are set correctly
+    - tests new delicious function when it should be delicious
+    when licorice
+    - tests new delicious function when it should not be delicious
+    can set
+    -tests getters and setters
+    
+RockPaperScissors
+    game
+        rock breaks scissors
+        - tests case where rock wins over scissors
+        scissors cut paper
+        - tests case where scissors wins over paper
+        paper covers rock
+        - tests case where paper wins over rock
+        first player wins if both use same strategy
+        - tests case where first player wins if both choose the same strategy
+        
+    should raise NoSuchStrategyError if strategy isn't R, P, or S
+    - tests whether a NoSuchStrategyError is correctly raised if strategy is not in 'R,P,S'
+    
+    tournament
+        base case
+        - tests if the tournament correctly returns a winner for only one game
+        recursive case
+        - tests if function correctly recurses through the games and produces the correct winner
+        should raise No Such StrategyError if a strategy in the tournament isn't R, P, or S
+        - tests if the function produces the correct error if there is a strategy in the tournament that is not R, P, S

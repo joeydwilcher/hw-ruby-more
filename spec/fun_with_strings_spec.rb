@@ -36,7 +36,7 @@ describe 'word count' do
   end
 end
 
-describe 'anagram grouping', :pending => true do
+describe 'anagram grouping' do
   describe 'sanity checks' do
     it 'should work on the empty string' do
       expect(''.anagram_groups).to eq([])
@@ -52,5 +52,11 @@ describe 'anagram grouping', :pending => true do
         expect(@anagrams).to include(group)
     end
   end
-    
+  it 'should ignore capitalization"' do
+    @anagrams = 'Rats Tars Star ah Ha aPe pEa' .anagram_groups
+    @anagrams.each { |group| group.sort! }
+    [%w(Rats Star Tars), %w(Ha ah), %w(aPe pEa)].each do |group|
+        expect(@anagrams).to include(group)
+    end
+  end
 end

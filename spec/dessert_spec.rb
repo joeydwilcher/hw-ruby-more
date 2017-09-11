@@ -2,7 +2,7 @@ require 'dessert'
 require 'byebug'
 require 'rspec/its'
 
-describe Dessert, :pending => true do
+describe Dessert do
   describe 'cake' do
     subject { Dessert.new('cake', 400) }
     its(:calories) { should == 400 }
@@ -28,7 +28,7 @@ describe Dessert, :pending => true do
   end
 end
 
-describe JellyBean, :pending => true do
+describe JellyBean do
   describe 'when non-licorice' do
     subject { JellyBean.new('vanilla') }
     its(:calories) { should == 5 }
@@ -38,5 +38,16 @@ describe JellyBean, :pending => true do
   describe 'when licorice' do
     subject { JellyBean.new('licorice') }
     it { should_not be_delicious }
+  end
+  describe 'can set' do
+    before(:each) { @jellybean = JellyBean.new('xxx') }
+    it 'calories' do
+      @jellybean.calories = 80
+      expect(@jellybean.calories).to eq(80)
+    end
+    it 'flavor' do
+      @jellybean.flavor = 'ice cream'
+      expect(@jellybean.name).to eq('ice cream jelly bean')
+    end
   end
 end
